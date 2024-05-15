@@ -1,0 +1,16 @@
+meta {
+  name: markdown-file-into-pdf
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/forms/chromium/convert/markdown
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  index.html: @file(/home/luweslen/code/privy/generate-pdf-gotenberg/files-example/markdown/index.html)
+  file.md: @file(/home/luweslen/code/privy/generate-pdf-gotenberg/files-example/markdown/file.md)
+}

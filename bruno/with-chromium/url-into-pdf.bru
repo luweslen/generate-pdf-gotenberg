@@ -1,0 +1,26 @@
+meta {
+  name: url-into-pdf
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/forms/chromium/convert/url
+  body: multipartForm
+  auth: none
+}
+
+headers {
+  ~Gotenberg-Trace: 
+  ~Gotenberg-Output-Filename: 
+}
+
+body:json {
+  {
+    "url": "https://my.url"
+  }
+}
+
+body:multipart-form {
+  url: https://my.url
+}

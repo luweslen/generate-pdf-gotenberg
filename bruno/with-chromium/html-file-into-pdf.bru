@@ -1,0 +1,15 @@
+meta {
+  name: html-file-into-pdf
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/forms/chromium/convert/html
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  index.html: @file(/home/luweslen/code/privy/generate-pdf-gotenberg/files-example/html/index.html)
+}
